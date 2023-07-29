@@ -16,16 +16,18 @@ const STATUS_MAP = {
 export default function Order() {
   const { data, isLoading, handleStatusChange } = useOrderList();
 
+  console.log(data);
+
   //FIXME: loading 수정
   if (isLoading) return <>로딩 중..</>;
 
   return (
-    //FIXME: inline 수정
     <div style={{ overflow: 'auto', height: '100vh' }}>
       {data.map((item: Order) => {
+        const items = item.items;
         return (
           <div key={item.id}>
-            {item.id} | {item.}
+            {item.id}
             <Space wrap>
               <Select
                 defaultValue={STATUS_MAP[item.status]}

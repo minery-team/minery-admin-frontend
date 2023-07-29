@@ -1,6 +1,7 @@
 import { Address } from './Address';
 import { OrderStatus } from './OrderStatus';
 import { Product, ProductOption } from './Product';
+import { User } from './User';
 
 export interface OrderItem {
   id: number;
@@ -18,4 +19,5 @@ export interface Order {
   items: OrderItem[];
   waybillNumber?: string;
   deliveryMessage: string | null;
+  user: User;
 }
