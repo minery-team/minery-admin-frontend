@@ -3,13 +3,7 @@
 import Space from 'antd/es/space';
 import { useOrderList } from './hooks/useOrderList';
 import Select from 'antd/es/select';
-
-//FIXME: 변수명 및 데이터 수정
-type Res = {
-  id: number;
-  status: keyof typeof STATUS_MAP;
-  waybillNumber: number;
-};
+import { Order } from './models/Order';
 
 const STATUS_MAP = {
   PAYMENT: '주문완료',
@@ -28,10 +22,10 @@ export default function Order() {
   return (
     //FIXME: inline 수정
     <div style={{ overflow: 'auto', height: '100vh' }}>
-      {data.map((item: Res) => {
+      {data.map((item: Order) => {
         return (
           <div key={item.id}>
-            {item.id}
+            {item.id} | {item.}
             <Space wrap>
               <Select
                 defaultValue={STATUS_MAP[item.status]}
