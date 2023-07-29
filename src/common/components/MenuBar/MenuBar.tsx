@@ -2,7 +2,7 @@
 
 import Home from '@/app/page';
 import { UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Layout, Menu } from 'antd';
+import { Menu } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import { useRouter, usePathname } from 'next/navigation';
 
