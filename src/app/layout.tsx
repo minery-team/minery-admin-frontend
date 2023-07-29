@@ -1,8 +1,10 @@
+import { MenuBar } from '@/common/components/MenuBar/MenuBar';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
 import ReactQueryProvider from './ReactQueryClient';
+import Layout from 'antd/es/layout';
+import { Content } from 'antd/es/layout/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          <Layout>
+            <MenuBar />
+            <Layout>{children}</Layout>
+          </Layout>
+        </ReactQueryProvider>
       </body>
     </html>
   );
