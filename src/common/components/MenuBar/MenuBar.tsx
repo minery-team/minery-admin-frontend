@@ -1,7 +1,7 @@
 'use client';
 
 import Home from '@/app/page';
-import { UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { VideoCameraOutlined, RestOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import Sider from 'antd/es/layout/Sider';
 import { useRouter, usePathname } from 'next/navigation';
@@ -30,8 +30,8 @@ export function MenuBar() {
           },
           {
             key: '/wine',
-            icon: <UserOutlined />,
-            label: '와인',
+            icon: <RestOutlined />,
+            label: '와인 관리',
             onClick: () => handleMenuClick('/wine'),
           },
           {
