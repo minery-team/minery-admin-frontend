@@ -18,9 +18,22 @@ function AddWinePage() {
     const winePostProps = addWine(formRef, wineList);
 
     if (winePostProps) {
-      const { _id } = await postWine(winePostProps);
-      const productPostProps = addProduct(formRef, _id);
-      await postProduct(productPostProps);
+      await postWine(winePostProps)
+        .then(async ({ _id }) => {
+          const productPostProps = addProduct(formRef, _id);
+          await postProduct(productPostProps)
+            .then(() => {
+              window.alert('와인이 등록되었습니다!');
+            })
+            .catch(() => {
+              window.alert(
+                `product 등록에 실패했습니다. ${_id} 와인에 대해 문의 바랍니다.`
+              );
+            });
+        })
+        .catch(() => {
+          window.alert('wine 등록에 실패했습니다.');
+        });
     }
   };
 
