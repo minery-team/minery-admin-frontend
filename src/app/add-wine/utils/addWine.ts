@@ -1,6 +1,7 @@
 import { MutableRefObject } from 'react';
 
 import { WineProps } from '../model/WineInfo';
+import { divideByComma } from '@/app/revise-wine/[id]/util/stringUtil';
 
 export const addWine = (
   formRef: MutableRefObject<HTMLFormElement | null>,
@@ -22,14 +23,21 @@ export const addWine = (
           inputElements[WineProps[i].index].value,
         ];
       else if (WineProps[i].tag === 'kinds') {
-        for (let j = 0; j < wineList.length; j += 1) {
-          if (
-            wineList[j].name.includes(inputElements[WineProps[i].index].value)
-          ) {
-            winePostProps[WineProps[i].tag] = [wineList[j].id];
-            break;
+        const kindList = divideByComma(inputElements[WineProps[i].index].value);
+
+        let kindIdList: string[] = [];
+        for (let j = 0; j < kindList.length; j += 1) {
+          for (let k = 0; k < wineList.length; k += 1) {
+            if (
+              wineList[k].name.includes(inputElements[WineProps[i].index].value)
+            ) {
+              kindIdList.push(wineList[k].id);
+              break;
+            }
           }
         }
+
+        winePostProps[WineProps[i].tag] = kindIdList;
       } else {
         if (WineProps[i].type === 'number')
           winePostProps[WineProps[i].tag] = Number(
@@ -44,6 +52,7 @@ export const addWine = (
     winePostProps['rating'] = undefined;
     winePostProps['searchable'] = false;
     winePostProps['image'] =
+      inputElements[22].value ||
       'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png';
     winePostProps['rate'] = 0;
 
