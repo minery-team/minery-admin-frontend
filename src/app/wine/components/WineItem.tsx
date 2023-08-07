@@ -16,8 +16,8 @@ function WineItem({
 }) {
   const router = useRouter();
 
-  const onClickRevise = (wineId: number) => {
-    router.push(`/revise-wine/${wineId}`);
+  const onClickRevise = (productId: number) => {
+    router.push(`/revise-wine/${productId}`);
   };
 
   const onClickDelete = async (wineId: number) => {
@@ -38,9 +38,7 @@ function WineItem({
         <div>
           <div style={{ fontSize: '20px' }}>{wine.name}</div>
           <div style={{ display: 'flex', marginTop: '10px', gap: '10px' }}>
-            <Button onClick={() => onClickRevise(wine.wine._id)}>
-              정보 수정
-            </Button>
+            <Button onClick={() => onClickRevise(wine.id)}>정보 수정</Button>
             <Button danger onClick={() => onClickDelete(wine.id)}>
               삭제
             </Button>
