@@ -27,17 +27,19 @@ export const addProduct = (
 
     productPostProps['wineId'] = wineId;
     productPostProps['type'] = 'wine';
-    productPostProps['contentImage'] =
-      'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png';
     productPostProps['image'] =
+      inputElements[22].value ||
       'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png';
-    productPostProps['images'] = [
+    productPostProps['contentImage'] =
+      inputElements[23].value ||
+      'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png';
+    productPostProps['images'] = inputElements[24].value.split(',') || [
+      'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png',
+    ];
+    productPostProps['labelImages'] = inputElements[25].value.split(',') || [
       'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png',
     ];
     productPostProps['order'] = 0;
-    productPostProps['labelImages'] = [
-      'https://wine21.speedgabia.com/WINE_MST/TITLE/0174000/W0174956.png',
-    ];
 
     return productPostProps;
   }
