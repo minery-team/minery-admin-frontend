@@ -36,6 +36,7 @@ export default function Order() {
               <Select
                 defaultValue={STATUS_MAP[item.status]}
                 style={{ width: 120 }}
+                //FIXME: UI는 그대로 변경이 되는데 배송버튼을 별도로 분리해야함
                 onChange={(status) =>
                   handleStatusChange({
                     status: status,
