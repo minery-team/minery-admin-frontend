@@ -1,5 +1,9 @@
-import Image from 'next/image';
+'use client';
 
-export default function Home() {
+import withAuth from '@/common/hocs/withAuth';
+
+const Home = () => {
   return <main>home</main>;
-}
+};
+
+export default withAuth(Home);
