@@ -10,6 +10,15 @@ export interface OrderItem {
   options: { id: number; option: ProductOption; amount: number }[];
 }
 
+interface Payment {
+  amount: number;
+  id: string;
+  method: string;
+  orderId: string;
+  time: string;
+  type: string;
+}
+
 export interface Order {
   id: number;
   cost: number;
@@ -20,4 +29,5 @@ export interface Order {
   waybillNumber?: string;
   deliveryMessage: string | null;
   user: User;
+  payment: Payment;
 }

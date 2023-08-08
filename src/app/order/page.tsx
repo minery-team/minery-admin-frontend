@@ -4,6 +4,8 @@ import Space from 'antd/es/space';
 import { useOrderList } from './hooks/useOrderList';
 import Select from 'antd/es/select';
 import { Order } from './models/Order';
+import { format } from 'date-fns';
+import { Button } from 'antd';
 
 const STATUS_MAP = {
   PAYMENT: '주문완료',
@@ -16,18 +18,18 @@ const STATUS_MAP = {
 export default function Order() {
   const { data, isLoading, handleStatusChange } = useOrderList();
 
-  console.log(data);
-
   //FIXME: loading 수정
   if (isLoading) return <>로딩 중..</>;
 
   return (
     <div style={{ overflow: 'auto', height: '100vh' }}>
       {data.map((item: Order) => {
-        const items = item.items;
         return (
-          <div key={item.id}>
-            {item.id}
+          <div style={{ margin: '20px 0' }} key={item.id}>
+            {item.payment.orderId} / {item.address.phone} /{' '}
+            {format(new Date(item.payment.time), 'yy-MM-dd')} /{' '}
+            {/* 취소일시 필드 */}
+            {item.cost} /{' '}
             <Space wrap>
               <Select
                 defaultValue={STATUS_MAP[item.status]}
