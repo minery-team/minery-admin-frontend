@@ -3,14 +3,14 @@
 import Space from 'antd/es/space';
 import { useOrderList } from './hooks/useOrderList';
 import Select from 'antd/es/select';
-import { Table } from 'antd';
+import { Button, Table } from 'antd';
 import withAuth from '@/common/hocs/withAuth';
 import { ColumnsType } from 'antd/es/table';
 
 const STATUS_MAP = {
   PAYMENT: '주문완료',
   PREPARE: '준비중',
-  SENT: '배송시작',
+  SEND: '배송시작',
   DONE: '배송 완료',
   CANCEL: '주문 반려',
 };
@@ -31,11 +31,13 @@ type DataType = {
   cancleDate: any;
   price: number;
   payment: keyof typeof STATUS_MAP;
+  delivery: boolean;
   additionalInfo: AdditionalInfo;
 };
 
 const Order = () => {
-  const { data, isLoading, handleStatusChange } = useOrderList();
+  const { data, isLoading, handleStatusChange, handleSentClick } =
+    useOrderList();
 
   //FIXME: 컴포넌트 분리필요
   const columns: ColumnsType<DataType> = [
@@ -70,7 +72,7 @@ const Order = () => {
       render: (_, item) => (
         <Space wrap>
           <Select
-            defaultValue={STATUS_MAP[item.payment]}
+            defaultValue={STATUS_MAP[item.payment] || '배송중'}
             style={{ width: 120 }}
             //FIXME: UI는 그대로 변경이 되는데 배송버튼을 별도로 분리해야함
             onChange={(status) =>
@@ -82,12 +84,26 @@ const Order = () => {
             options={[
               { value: 'PAYMENT', label: STATUS_MAP.PAYMENT },
               { value: 'PREPARE', label: STATUS_MAP.PREPARE },
-              { value: 'SENT', label: STATUS_MAP.SENT },
               { value: 'DONE', label: STATUS_MAP.DONE },
               { value: 'CANCEL', label: STATUS_MAP.CANCEL },
             ]}
           />
         </Space>
+      ),
+    },
+
+    {
+      title: '배송 시작',
+      dataIndex: 'delivery',
+      key: 'delivery',
+      render: (_, item) => (
+        <Button
+          onClick={() => {
+            handleSentClick(item.id);
+          }}
+        >
+          배송 시작
+        </Button>
       ),
     },
   ];
