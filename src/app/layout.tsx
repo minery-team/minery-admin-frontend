@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import ReactQueryProvider from './ReactQueryClient';
 import Layout from 'antd/es/layout';
-import { Content } from 'antd/es/layout/layout';
+import RecoilWrapper from '@/common/components/RecoilWrapper/RecoilWrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,12 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReactQueryProvider>
-          <Layout>
-            <MenuBar />
-            <Layout>{children}</Layout>
-          </Layout>
-        </ReactQueryProvider>
+        <RecoilWrapper>
+          <ReactQueryProvider>
+            <Layout>
+              <MenuBar />
+              <Layout>{children}</Layout>
+            </Layout>
+          </ReactQueryProvider>
+        </RecoilWrapper>
       </body>
     </html>
   );
