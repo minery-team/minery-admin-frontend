@@ -1,15 +1,33 @@
 import { useQuery } from 'react-query';
-import { requester } from '../../../common/api/requester';
 import {
   getOrderList,
   startDelivery,
   updateOrderStatus,
 } from '@/common/api/order';
-import { useRouter } from 'next/navigation';
+import { format } from 'date-fns';
 
 export function useOrderList() {
   const query = useQuery('order-list', () => getOrderList());
-  const router = useRouter();
+
+  const tableData = query.data?.map((item: any, idx: number) => {
+    return {
+      key: idx,
+      id: item.id,
+      phone: item.address.phone,
+      payDate: format(new Date(item.payment.time), 'yy년 MM월 dd일'),
+      cancleDate: 'FIXME',
+      price: item.cost,
+      payment: item.status,
+      additionalInfo: {
+        address: item.address.address,
+        deliveryMessage: item.deliveryMessage,
+        orderInfo: item.items,
+        //FIXME: paymanetId는 모지..?
+        tossOrderId: item.payment.orderId,
+        waybillNumber: item.waybillNumber,
+      },
+    };
+  });
 
   const handleStatusChange = ({
     status,
@@ -32,7 +50,7 @@ export function useOrderList() {
   };
 
   return {
-    data: query.data,
+    data: tableData,
     isLoading: query.isLoading,
     handleStatusChange,
   };
