@@ -8,7 +8,16 @@ export default function Login() {
   const { handleLogin, setId, setPassword } = useLogin();
 
   return (
-    <Space style={{ width: '200px', margin: '50% auto' }} direction="vertical">
+    <Space
+      style={{
+        display: 'flex',
+        width: '200px',
+        height: '100vh',
+        justifyContent: 'center',
+        margin: '0 auto',
+      }}
+      direction="vertical"
+    >
       <Input
         size="middle"
         placeholder="아이디"

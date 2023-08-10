@@ -1,15 +1,15 @@
-import { safeLocalStorage } from './Storage';
+import { safeSessionStorage } from './Storage';
 
 export const ACCESS_TOKEN_KEY = '@YWNjZXNzX3Rva2Vu';
 
 export function getAccessToken() {
-  return safeLocalStorage.get(ACCESS_TOKEN_KEY);
+  return safeSessionStorage.get(ACCESS_TOKEN_KEY);
 }
 
 export function clearAccessToken() {
-  return safeLocalStorage.remove(ACCESS_TOKEN_KEY);
+  return safeSessionStorage.remove(ACCESS_TOKEN_KEY);
 }
 
 export function setAccessToken(accessToken: string) {
-  return safeLocalStorage.set(ACCESS_TOKEN_KEY, accessToken);
+  return safeSessionStorage.set(ACCESS_TOKEN_KEY, accessToken);
 }
