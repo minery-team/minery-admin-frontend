@@ -7,7 +7,7 @@ import {
 import { format } from 'date-fns';
 
 export function useOrderList() {
-  const query = useQuery('order-list', () => getOrderList());
+  const query = useQuery(['order-list'], () => getOrderList());
 
   const tableData = query.data?.map((item: any, idx: number) => {
     return {
@@ -29,6 +29,18 @@ export function useOrderList() {
     };
   });
 
+  const handleSentClick = (id: number) => {
+    const waybillNumber = Number(prompt('운송장 번호를 입력해주세요'));
+    if (waybillNumber) {
+      startDelivery(id, waybillNumber);
+      updateOrderStatus(id, 'SENT').then(() => {
+        alert(
+          '배송중으로 상태가 변경되지 않을텐데.. 새로고침 부탁드리겠습니다!(반영예정)'
+        );
+      });
+    }
+  };
+
   const handleStatusChange = ({
     status,
     id,
@@ -36,16 +48,6 @@ export function useOrderList() {
     status: string;
     id: number;
   }) => {
-    if (status === 'SENT') {
-      const waybillNumber = Number(prompt('운송장 번호를 입력해주세요'));
-      if (!waybillNumber) {
-        alert('현재는 운송장 번호를 미입력한 경우 새로고침이 필요합니다');
-        return;
-      }
-
-      startDelivery(id, waybillNumber);
-    }
-
     updateOrderStatus(id, status);
   };
 
@@ -53,5 +55,6 @@ export function useOrderList() {
     data: tableData,
     isLoading: query.isLoading,
     handleStatusChange,
+    handleSentClick,
   };
 }
