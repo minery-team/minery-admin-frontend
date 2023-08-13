@@ -9,6 +9,7 @@ import { useWineKindList } from './hooks/useWineKindList';
 import WineInfoByCategory from './components/WineInfoByCategory';
 import { addWine } from './utils/addWine';
 import { addProduct } from './utils/addProduct';
+import withAuth from '@/common/hocs/withAuth';
 
 function AddWinePage() {
   const wineList = useWineKindList();
@@ -80,4 +81,4 @@ function AddWinePage() {
   );
 }
 
-export default AddWinePage;
+export default withAuth(AddWinePage);
