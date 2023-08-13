@@ -17,7 +17,9 @@ const CurrentWineInfo = ({
 }) => {
   const getValue = (tag: string) => {
     if (productInfo) {
-      if (productInfo[tag]) return productInfo[tag];
+      if (tag === 'averagePrice') return productInfo.wine.price;
+      else if (tag === 'type') return productInfo.wine.type;
+      else if (productInfo[tag]) return productInfo[tag];
       else if (productInfo.wine[tag]) {
         if (tag === 'kinds') {
           let kindList = '';
