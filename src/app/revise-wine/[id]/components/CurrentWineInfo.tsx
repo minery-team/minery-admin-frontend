@@ -66,7 +66,7 @@ const CurrentWineInfo = ({
             >
               <div>{content.name}</div>
               <input
-                value={getValue(content.tag)}
+                defaultValue={getValue(content.tag)}
                 type="text"
                 style={{
                   border: '1px solid black',
