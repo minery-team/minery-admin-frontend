@@ -1,0 +1,82 @@
+{
+  "pages": {
+    "/page": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/app/page-574e1bd402b4f2ec.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/f4e5f4e1-4ee942796fa6500c.js",
+      "static/chunks/77-f1ffeba451fce0e9.js",
+      "static/chunks/113-e04eda46314c1bb6.js",
+      "static/chunks/677-24b487ae2ef1b891.js",
+      "static/chunks/340-68bbd93754f8a4dd.js",
+      "static/css/b268bd9ef0ed6722.css",
+      "static/chunks/app/layout-4f388cd1e907d9fc.js"
+    ],
+    "/add-wine/page": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/89-6dbf457a0e9422ac.js",
+      "static/chunks/77-f1ffeba451fce0e9.js",
+      "static/chunks/app/add-wine/page-8e8acb99c20dddca.js"
+    ],
+    "/order/page": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/89-6dbf457a0e9422ac.js",
+      "static/chunks/77-f1ffeba451fce0e9.js",
+      "static/chunks/113-e04eda46314c1bb6.js",
+      "static/chunks/110-b3c4da1f9167ef32.js",
+      "static/chunks/677-24b487ae2ef1b891.js",
+      "static/chunks/340-68bbd93754f8a4dd.js",
+      "static/chunks/821-d8c09642efc2f179.js",
+      "static/chunks/873-d046fe7917fa3dca.js",
+      "static/chunks/app/order/page-728f943e76c1005a.js"
+    ],
+    "/wine/page": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/89-6dbf457a0e9422ac.js",
+      "static/chunks/77-f1ffeba451fce0e9.js",
+      "static/chunks/113-e04eda46314c1bb6.js",
+      "static/chunks/110-b3c4da1f9167ef32.js",
+      "static/chunks/240-db9049c8e847d243.js",
+      "static/chunks/app/wine/page-d7fec156eb3cb5cb.js"
+    ],
+    "/login/page": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/f4e5f4e1-4ee942796fa6500c.js",
+      "static/chunks/89-6dbf457a0e9422ac.js",
+      "static/chunks/113-e04eda46314c1bb6.js",
+      "static/chunks/110-b3c4da1f9167ef32.js",
+      "static/chunks/677-24b487ae2ef1b891.js",
+      "static/chunks/821-d8c09642efc2f179.js",
+      "static/chunks/app/login/page-cd16d41c56f7bc3e.js"
+    ],
+    "/revise-wine/[id]/page": [
+      "static/chunks/webpack-2bb7640f6c6ed1c7.js",
+      "static/chunks/fd9d1056-a6a51877aa8a0ab8.js",
+      "static/chunks/596-ee029ed8304ebc61.js",
+      "static/chunks/main-app-4d0ff5154e959d4f.js",
+      "static/chunks/89-6dbf457a0e9422ac.js",
+      "static/chunks/77-f1ffeba451fce0e9.js",
+      "static/chunks/app/revise-wine/[id]/page-452428a9c36cc5d5.js"
+    ]
+  }
+}

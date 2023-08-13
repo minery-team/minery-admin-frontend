@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/add-wine/page": "app/add-wine/page.js",
+  "/order/page": "app/order/page.js",
+  "/wine/page": "app/wine/page.js",
+  "/login/page": "app/login/page.js",
+  "/revise-wine/[id]/page": "app/revise-wine/[id]/page.js"
+}

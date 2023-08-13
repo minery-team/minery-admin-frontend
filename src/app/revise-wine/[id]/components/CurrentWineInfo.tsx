@@ -19,7 +19,9 @@ const CurrentWineInfo = ({
     if (productInfo) {
       if (tag === 'averagePrice') return productInfo.wine.price;
       else if (tag === 'type') return productInfo.wine.type;
+      //@ts-ignore
       else if (productInfo[tag]) return productInfo[tag];
+      //@ts-ignore
       else if (productInfo.wine[tag]) {
         if (tag === 'kinds') {
           let kindList = '';
@@ -30,6 +32,7 @@ const CurrentWineInfo = ({
 
           return kindList;
         }
+        //@ts-ignore
         return productInfo.wine[tag];
       }
     }
