@@ -112,7 +112,7 @@ const Order = () => {
   if (isLoading) return <>로딩 중..</>;
 
   return (
-    <div style={{ overflow: 'auto', height: '100vh' }}>
+    <div className="h-screen overflow-auto">
       <Table
         columns={columns}
         dataSource={data}

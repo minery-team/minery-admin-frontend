@@ -8,7 +8,7 @@ function WinePage() {
   const [wineList, refetchWineList] = useWineList({ order: 0 });
 
   return (
-    <div style={{ height: '100vh', overflowY: 'scroll' }}>
+    <div className="h-screen overflow-y-scroll">
       {wineList &&
         wineList.map((wine) => {
           return <WineItem wine={wine} refetchWineList={refetchWineList} />;

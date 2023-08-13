@@ -36,43 +36,16 @@ const CurrentWineInfo = ({
 
   return (
     <div>
-      <div
-        style={{
-          fontSize: '20px',
-          marginBottom: '10px',
-          fontWeight: 'bold',
-        }}
-      >
-        {wineCategory.category}
-      </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          backgroundColor: '#ffffff',
-          borderRadius: '20px',
-          padding: '20px',
-          gap: '10px',
-        }}
-      >
+      <div className="text-xl font-bold mb-2.5">{wineCategory.category}</div>
+      <div className="flex flex-col bg-white	rounded-2xl gap-2.5 px-5 py-5">
         {wineCategory.content.map((content) => {
           return (
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '5px',
-              }}
-            >
+            <div className="flex flex-col gap-1.5">
               <div>{content.name}</div>
               <input
                 defaultValue={getValue(content.tag)}
                 type="text"
-                style={{
-                  border: '1px solid black',
-                  width: '100%',
-                  height: '30px',
-                }}
+                className="w-full h-8 border border-solid border-black"
               />
             </div>
           );
