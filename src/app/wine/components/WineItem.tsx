@@ -28,7 +28,7 @@ function WineItem({
 
   return (
     <div>
-      <div style={{ display: 'flex' }}>
+      <div className="flex">
         <Image
           src={wine.image ?? '/images/empty_wine.png'}
           alt={wine.name}
@@ -36,8 +36,8 @@ function WineItem({
           height={100}
         />
         <div>
-          <div style={{ fontSize: '20px' }}>{wine.name}</div>
-          <div style={{ display: 'flex', marginTop: '10px', gap: '10px' }}>
+          <div className="text-xl">{wine.name}</div>
+          <div className="flex mt-2.5 gap-2.5">
             <Button onClick={() => onClickRevise(wine.id)}>정보 수정</Button>
             <Button danger onClick={() => onClickDelete(wine.id)}>
               삭제
@@ -45,13 +45,7 @@ function WineItem({
           </div>
         </div>
       </div>
-      <div
-        style={{
-          width: '100%',
-          height: '1px',
-          backgroundColor: 'black',
-        }}
-      />
+      <div className="w-full h-px bg-black" />
     </div>
   );
 }

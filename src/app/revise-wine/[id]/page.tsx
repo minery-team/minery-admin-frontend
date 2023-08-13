@@ -20,7 +20,7 @@ function ReviseWinePage({ params }: { params: { id: string } }) {
 
   const onClickRevise = async () => {
     const wineReviseProps = reviseWineInfo(formRef, wineList);
-    // TODO wine/product 변경 api 사용하기
+
     if (wineReviseProps) {
       await reviseWine(productInfo.wine._id, wineReviseProps)
         .then(async () => {
@@ -45,24 +45,14 @@ function ReviseWinePage({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div style={{ height: '100vh', overflowY: 'scroll' }}>
-      <div
-        style={{ fontSize: '30px', padding: '0 0 0 20px', fontWeight: 'bold' }}
-      >
-        와인 수정
-      </div>
+    <div className="h-screen overflow-scroll">
+      <div className="text-3xl font-bold pl-5">와인 수정</div>
       <form
         ref={formRef}
+        className="flex flex-col w-full gap-5 px-5 py-5"
         onSubmit={(e) => {
           e.preventDefault();
           onClickRevise();
-        }}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '20px',
-          width: '100%',
-          padding: '20px',
         }}
       >
         {WineInfo.map((info) => {
@@ -72,15 +62,7 @@ function ReviseWinePage({ params }: { params: { id: string } }) {
         })}
         <button
           type="submit"
-          style={{
-            width: 100,
-            height: 50,
-            backgroundColor: '#1777FF',
-            fontSize: '20px',
-            borderRadius: 10,
-            color: '#ffffff',
-            alignSelf: 'end',
-          }}
+          className="self-end w-24 h-12 rounded-xl text-xl text-white	 bg-blue-500"
         >
           수정
         </button>

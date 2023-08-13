@@ -9,13 +9,7 @@ export default function Login() {
 
   return (
     <Space
-      style={{
-        display: 'flex',
-        width: '200px',
-        height: '100vh',
-        justifyContent: 'center',
-        margin: '0 auto',
-      }}
+      className="flex justify-center w-52 h-screen mx-auto"
       direction="vertical"
     >
       <Input

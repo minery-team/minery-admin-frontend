@@ -39,24 +39,14 @@ function AddWinePage() {
   };
 
   return (
-    <div style={{ height: '100vh', overflowY: 'scroll' }}>
-      <div
-        style={{ fontSize: '30px', padding: '0 0 0 20px', fontWeight: 'bold' }}
-      >
-        와인 추가
-      </div>
+    <div className="h-screen overflow-y-scroll">
+      <div className="text-3xl font-bold pl-5">와인 추가</div>
       <form
         ref={formRef}
+        className="flex flex-col w-full gap-5 px-5 py-5"
         onSubmit={(e) => {
           e.preventDefault();
           onSubmitWineInfo();
-        }}
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '20px',
-          width: '100%',
-          padding: '20px',
         }}
       >
         {WineInfo.map((info) => {
@@ -64,15 +54,7 @@ function AddWinePage() {
         })}
         <button
           type="submit"
-          style={{
-            width: 100,
-            height: 50,
-            backgroundColor: '#1777FF',
-            fontSize: '20px',
-            borderRadius: 10,
-            color: '#ffffff',
-            alignSelf: 'end',
-          }}
+          className="self-end w-24 h-12 rounded-xl text-xl text-white	 bg-blue-500"
         >
           저장
         </button>
