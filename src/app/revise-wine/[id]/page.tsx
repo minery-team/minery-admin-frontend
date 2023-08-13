@@ -11,6 +11,7 @@ import { useProduct } from './hooks/useProduct';
 import { divideByComma } from './util/stringUtil';
 import { reviseWineInfo } from './util/reviseWineInfo';
 import { reviseProductInfo } from './util/reviseProductInfo';
+import withAuth from '@/common/hocs/withAuth';
 
 function ReviseWinePage({ params }: { params: { id: string } }) {
   const wineList = useWineKindList();
@@ -88,4 +89,4 @@ function ReviseWinePage({ params }: { params: { id: string } }) {
   );
 }
 
-export default ReviseWinePage;
+export default withAuth(ReviseWinePage);

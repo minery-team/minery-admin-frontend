@@ -2,6 +2,7 @@
 
 import { useWineList } from './hooks/useWineList';
 import WineItem from './components/WineItem';
+import withAuth from '@/common/hocs/withAuth';
 
 function WinePage() {
   const [wineList, refetchWineList] = useWineList({ order: 0 });
@@ -16,4 +17,4 @@ function WinePage() {
   );
 }
 
-export default WinePage;
+export default withAuth(WinePage);
