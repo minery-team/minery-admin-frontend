@@ -5,9 +5,15 @@ import {
   updateOrderStatus,
 } from '@/common/api/order';
 import { format } from 'date-fns';
+import { Order } from '../models/Order';
 
 export function useOrderList() {
-  const query = useQuery(['order-list'], () => getOrderList());
+  const query = useQuery(['order-list'], () => getOrderList(), { onSuccess: list => {
+    list.sort(function compare(a: Order, b: Order) {
+      if (a.id < b.id) return 1;
+      else return -1
+    })
+  }});
 
   const tableData = query.data?.map((item: any, idx: number) => {
     return {
