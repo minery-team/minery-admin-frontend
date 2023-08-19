@@ -26,7 +26,7 @@ export function useOrderList() {
       price: item.cost,
       payment: item.status,
       additionalInfo: {
-        address: item.address.address,
+        address: `${item.address.address} ${item.address.detailAddress}`,
         deliveryMessage: item.deliveryMessage,
         orderInfo: item.items,
         //FIXME: paymanetId는 모지..?
