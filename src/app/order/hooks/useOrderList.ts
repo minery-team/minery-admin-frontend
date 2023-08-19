@@ -14,11 +14,12 @@ export function useOrderList() {
       else return -1
     })
   }});
-
-  const tableData = query.data?.map((item: any, idx: number) => {
+  
+  const tableData = query.data?.map((item: Order, idx: number) => {
     return {
       key: idx,
       id: item.id,
+      name: item.address.name,
       phone: item.address.phone,
       payDate: format(new Date(item.payment.time), 'yy년 MM월 dd일'),
       cancleDate: 'FIXME',
