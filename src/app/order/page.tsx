@@ -47,6 +47,11 @@ const Order = () => {
       key: 'id',
     },
     {
+      title: '주문자',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
       title: '주문자 핸드폰 번호',
       dataIndex: 'phone',
       key: 'phone',
